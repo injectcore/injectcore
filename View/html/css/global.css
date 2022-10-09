@@ -1,0 +1,11 @@
+.bg-green {
+  background: rgba(27, 188, 155, 1);
+}
+
+.radius {
+  border-radius: 5px;
+}
+
+.mt-8 {
+  margin-top: 8px
+}
