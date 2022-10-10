@@ -1,0 +1,40 @@
+.loginPage {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: center;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+}
+
+.loginPage .bg {}
+
+.loginPage .bgImg {}
+
+.loginPage .loginWrap {
+  padding: 36px;
+  background: #fff;
+  width: 80%;
+  text-align: center;
+}
+
+.loginPage .loginWrap p {
+  margin: 24px auto;
+}
+
+.loginInner input,
+.loginInner button {
+  width: 80%;
+}
+
+.tipsWrap {
+  width: 80%;
+  text-align: right;
+}
+
+.tipsWrap a {
+  color: #ccc;
+  font-size: 14px;
+}
