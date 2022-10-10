@@ -2,10 +2,40 @@
   background: rgba(27, 188, 155, 1);
 }
 
+.text-gray {
+  color: #ccc;
+}
+
 .radius {
   border-radius: 5px;
 }
 
 .mt-8 {
   margin-top: 8px
+}
+
+.table thead {
+  background-color: #f3f3f3 !important;
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>thead>tr>td {
+  border-bottom-width: 1px;
+}
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+  border: none;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  background-color: #f9f9f9;
 }

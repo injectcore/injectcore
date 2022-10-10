@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- datepicker -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datepicker/datepicker3.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.css">
+  <!-- dataTables -->
   <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.css">
 
   <!-- Theme style -->
@@ -20,7 +25,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/css/skins/_all-skins.min.css">
-
+  <link rel="stylesheet" href="../css/global.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -165,7 +170,90 @@
 
       <!-- 主要内容开始 -->
       <section class="content">
-        操作日志
+        <div class="row">
+          <div class="col-xs-4">
+            <span>操作时间：</span>
+            <input type="text" class="" id="daterangepicker">
+          </div>
+        </div>
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>
+                  操作内容
+                </th>
+                <th>
+                  产品服务
+                </th>
+                <th>
+                  操作时间
+                </th>
+                <th>状态</th>
+                <th>操作者IP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SDDF</td>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 4.0
+                </td>
+                <td>Win 95+</td>
+                <td> 4</td>
+              </tr>
+              <tr>
+                <td>SDFSD</td>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 5.0
+                </td>
+                <td>Win 95+</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>DFD</td>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 5.5
+                </td>
+                <td>Win 95+</td>
+                <td>5.5</td>
+              </tr>
+              <tr>
+                <td>DSFGD</td>
+                <td>Trident</td>
+                <td>Internet
+                  Explorer 6
+                </td>
+                <td>Win 98+</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>GFH></td>
+                <td>Trident</td>
+                <td>Internet Explorer 7</td>
+                <td>Win XP SP2+</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>RTYRT</td>
+                <td>Trident</td>
+                <td>AOL browser (AOL desktop)</td>
+                <td>Win XP</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>RTYDSRT</td>
+                <td>Gecko</td>
+                <td>Firefox 1.0</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <!-- 主要内容结束 -->
     </div>
@@ -379,6 +467,11 @@
   <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
   <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/bootstrap/js/bootstrap.min.js"></script>
+  <!-- datepicker -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datepicker/bootstrap-datepicker.js"></script>
+  <!-- daterangepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js"></script>
   <!-- DataTables -->
   <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.min.js"></script>
@@ -396,13 +489,15 @@
         "paging": true,
         "lengthChange": false,
         "searching": false,
-        "ordering": true,
+        "ordering": false,
         "info": true,
         "autoWidth": false
       });
       $(".addBtn").click(() => {
         location.href = './node-detail.html'
       })
+      // 文档 http://www.daterangepicker.com/
+      $('#daterangepicker').daterangepicker();
       // $('#example2').DataTable({
       //   "paging": true,
       //   "lengthChange": false,

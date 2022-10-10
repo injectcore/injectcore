@@ -21,7 +21,25 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/css/skins/_all-skins.min.css">
+  <style>
+    .node-detail {}
 
+    .node-detail .box {
+      width: 80%;
+      border-top: none;
+      margin: 24px auto 16px;
+    }
+
+    .node-detail .radio {
+      margin-top: 8px;
+    }
+
+    .node-detail .footer {
+      width: 80%;
+      margin: 16px auto;
+      text-align: right;
+    }
+  </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -166,70 +184,79 @@
       </section>
 
       <!-- 主要内容开始 -->
-      <section class="content">
+      <section class="content node-detail">
         <div class="box">
-          <div class="box-header with-border">
+          <div class="box-header ">
             <h3 class="box-title">配置</h3>
           </div>
           <!-- /.box-header -->
-          <!-- form start -->
-          <form role="form">
+          <form class="form-horizontal">
             <div class="box-body">
               <div class="form-group">
-                <label for="cpuSelect">选择cpu</label>
-                <select class="form-control cpuSelect" id="cpuSelect" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
+                <label for="cpuSelect" class="col-sm-2 control-label">选择cpu</label>
+                <div class="col-sm-6">
+                  <select class="form-control cpuSelect" id="cpuSelect">
+                    <option selected="selected">Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <label for="storageSelect">选择内存</label>
-                <select class="form-control storageSelect" id="storageSelect" style="width: 100%;">
-                  <option selected="selected">4M</option>
-                  <option>4M</option>
-                  <option>8M</option>
-                  <option>16M</option>
-                  <option>32M</option>
-                </select>
+                <label for="storageSelect" class="col-sm-2 control-label">选择内存</label>
+                <div class="col-sm-6">
+                  <select class="form-control storageSelect" id="storageSelect" style="width: 100%;">
+                    <option selected="selected">4M</option>
+                    <option>4M</option>
+                    <option>8M</option>
+                    <option>16M</option>
+                    <option>32M</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <label for="cpuBrand">处理器</label>
-                <span class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                    Intel
-                  </label>
-                </span>
-                <span class="radio">
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                    AMD
-                  </label>
-                </span>
+                <label class="col-sm-2 control-label" for="cpuBrand">处理器</label>
+                <div class="col-sm-6">
+                  <span class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      Intel
+                    </label>
+                  </span>
+                  <span class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      AMD
+                    </label>
+                  </span>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputFile">文件上传</label>
-                <input type="file" id="exampleInputFile">
-
-                <p class="help-block">Example block-level help text here.</p>
-              </div>
-              <!-- <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Check me out
-                </label>
-              </div> -->
-            </div>
-            <!-- /.box-body -->
-
-            <div class="box-footer text-right">
-              <button type="button" class="btn btn-success">提交</button>
             </div>
           </form>
+        </div>
+        <div class="box">
+          <div class="box-header ">
+            <h3 class="box-title">文件上传</h3>
+          </div>
+          <!-- /.box-header -->
+          <form class="form-horizontal">
+            <div class="box-body">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="exampleInputFile">选择文件</label>
+                <div class="col-sm-6">
+                  <input type="file" id="exampleInputFile">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- /.box-body -->
+        </div>
+        <div class="footer text-right">
+          <button type="button" class="btn btn-success">提交</button>
         </div>
       </section>
       <!-- 主要内容结束 -->
