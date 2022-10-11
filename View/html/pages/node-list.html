@@ -21,7 +21,13 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="../css/global.css">
-
+  <style>
+    .td-wrap {
+      height: 38px;
+      display: flex;
+      align-items: center;
+    }
+  </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -130,8 +136,10 @@
       <section class="sidebar">
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-          <li><a href="./node-list.html"><i class="fa fa-circle-o text-red"></i> <span>云计算</span></a></li>
-          <li><a href="./log-list.html"><i class="fa fa-circle-o text-yellow"></i> <span>操作日志</span></a></li>
+          <li><a href="./node-list.html"><img src="../../../Icon/cloudcomputing.png" class="slideBar_icon"
+                alt="" /><span> 云计算</span></a></li>
+          <li><a href="./log-list.html"><img src="../../../Icon/log.png" class="slideBar_icon" alt="" /> <span>
+                操作日志</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -163,7 +171,7 @@
           </div>
           <div class="col-xs-4"></div>
           <div class="col-xs-4 text-right">
-            <span class="text-sm">一键筛选</span>
+            <span class="text-bold" style="margin-right: 10px;">一键筛选</span>
             <button class="btn btn-default btn-sm">运行中</button>
             <button class="btn btn-default btn-sm">已完成</button>
             <button class="btn btn-default btn-sm">异常</button>
@@ -194,12 +202,24 @@
             </thead>
             <tbody>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer001</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer001</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">70%</span>
@@ -208,16 +228,28 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer002</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer002</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">20%</span>
@@ -226,16 +258,28 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer003</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer003</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">45%</span>
@@ -244,16 +288,28 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer004</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer004</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">70%</span>
@@ -262,16 +318,28 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer005</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer005</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">90%</span>
@@ -280,16 +348,28 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>testServer006</td>
-                <td>运行中</td>
-                <td>2022/10/10</td>
-                <td>2022/10/11</td>
-                <td>4核数/16G</td>
+                <td>
+                  <div class="td-wrap"><input name='CBCheck' type='checkbox' /></div>
+                </td>
+                <td>
+                  <div class="td-wrap">testServer006</div>
+                </td>
+                <td>
+                  <div class="td-wrap">运行中</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/10</div>
+                </td>
+                <td>
+                  <div class="td-wrap">2022/10/11</div>
+                </td>
+                <td>
+                  <div class="td-wrap">4核数/16G</div>
+                </td>
                 <td>
                   <div class="progress-group">
                     <span class="progress-text">74%</span>
@@ -298,8 +378,8 @@
                     </div>
                   </div>
                 </td>
-                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
-                    style="border: none;background-color:transparent"></td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail  td-wrap" width="40"
+                    height="40" style="border: none;background-color:transparent"></td>
               </tr>
             </tbody>
           </table>
