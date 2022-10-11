@@ -38,11 +38,15 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="#" class="logo">
+      <a href="#" class="logo" style="font-size: 15px">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>logo</b></span>
+        <span class="logo-mini">
+          <img src="../../../Icon/reach.png" class="img-thumbnail" width="35" height="30"
+            style="border: none;background-color:transparent">
+          <b>睿驰科技公有云计算服务平台</b>
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>logo</b></span>
+        <span class="logo-lg"><b>睿驰科技公有云计算服务平台</b></span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -86,33 +90,17 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="../../../Icon/用户_user.png" class="user-image" alt="">
-                <span class="hidden-xs">Alexander Pierce</span>
+                <img src="../../../Icon/user.png" class="user-image" alt="">
+                <span class="hidden-xs">LiChunHui</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="../../../Icon/用户_user.png" class="img-circle" alt="User Image">
-
+                  <img src="../../../Icon/user.png" class="img-circle" alt="User Image">
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2012</small>
+                    LiChunHui
+                    <small>2022/10/11</small>
                   </p>
-                </li>
-                <!-- Menu Body -->
-                <li class="user-body">
-                  <div class="row">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </div>
-                  <!-- /.row -->
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
@@ -175,7 +163,7 @@
           </div>
           <div class="col-xs-4"></div>
           <div class="col-xs-4 text-right">
-            <span class="text-sm">一般筛选</span>
+            <span class="text-sm">一键筛选</span>
             <button class="btn btn-default btn-sm">运行中</button>
             <button class="btn btn-default btn-sm">已完成</button>
             <button class="btn btn-default btn-sm">异常</button>
@@ -187,485 +175,131 @@
               <tr>
                 <th><input name='CBCheck' type='checkbox' /></th>
                 <th>
-                  Rendering engine
+                  实例名称/文件名称
                   <i class="fa  fa-filter pull-right text-gray"></i>
                 </th>
                 <th>
-                  Browser
+                  状态
                   <i class="fa fa-sort-amount-asc pull-right text-gray"></i>
                 </th>
                 <th>
-                  Platform(s)
+                  创建时间
                   <i class="fa fa-sort-amount-desc pull-right text-gray"></i>
                 </th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>结束时间</th>
+                <th>配置</th>
+                <th>进度</th>
+                <th>结果</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
+                <td>testServer001</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">70%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                    </div>
+                  </div>
                 </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 5.0
+                <td>testServer002</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">20%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 20%"></div>
+                    </div>
+                  </div>
                 </td>
-                <td>Win 95+</td>
-                <td>5</td>
-                <td>C</td>
+                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 5.5
+                <td>testServer003</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">45%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 45%"></div>
+                    </div>
+                  </div>
                 </td>
-                <td>Win 95+</td>
-                <td>5.5</td>
-                <td>A</td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 6
+                <td>testServer004</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">70%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 70%"></div>
+                    </div>
+                  </div>
                 </td>
-                <td>Win 98+</td>
-                <td>6</td>
-                <td>A</td>
+                <td><img src="../../../Icon/download-onen.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>Internet Explorer 7</td>
-                <td>Win XP SP2+</td>
-                <td>7</td>
-                <td>A</td>
+                <td>testServer005</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">90%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 90%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
               <tr>
                 <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Trident</td>
-                <td>AOL browser (AOL desktop)</td>
-                <td>Win XP</td>
-                <td>6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Firefox 1.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Firefox 1.5</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Firefox 2.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Firefox 3.0</td>
-                <td>Win 2k+ / OSX.3+</td>
-                <td>1.9</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Camino 1.0</td>
-                <td>OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Camino 1.5</td>
-                <td>OSX.3+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Netscape 7.2</td>
-                <td>Win 95+ / Mac OS 8.6-9.2</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Netscape Browser 8</td>
-                <td>Win 98SE+</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Netscape Navigator 9</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.0</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.1</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.1</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.2</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.2</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.3</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.3</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.4</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.4</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.5</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.5</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.6</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>1.6</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.7</td>
-                <td>Win 98+ / OSX.1+</td>
-                <td>1.7</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Mozilla 1.8</td>
-                <td>Win 98+ / OSX.1+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Seamonkey 1.1</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Gecko</td>
-                <td>Epiphany 2.20</td>
-                <td>Gnome</td>
-                <td>1.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>Safari 1.2</td>
-                <td>OSX.3</td>
-                <td>125.5</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>Safari 1.3</td>
-                <td>OSX.3</td>
-                <td>312.8</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>Safari 2.0</td>
-                <td>OSX.4+</td>
-                <td>419.3</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>Safari 3.0</td>
-                <td>OSX.4+</td>
-                <td>522.1</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>OmniWeb 5.5</td>
-                <td>OSX.4+</td>
-                <td>420</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>iPod Touch / iPhone</td>
-                <td>iPod</td>
-                <td>420.1</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Webkit</td>
-                <td>S60</td>
-                <td>S60</td>
-                <td>413</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 7.0</td>
-                <td>Win 95+ / OSX.1+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 7.5</td>
-                <td>Win 95+ / OSX.2+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 8.0</td>
-                <td>Win 95+ / OSX.2+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 8.5</td>
-                <td>Win 95+ / OSX.2+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 9.0</td>
-                <td>Win 95+ / OSX.3+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 9.2</td>
-                <td>Win 88+ / OSX.3+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera 9.5</td>
-                <td>Win 88+ / OSX.3+</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Opera for Wii</td>
-                <td>Wii</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Nokia N800</td>
-                <td>N800</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Presto</td>
-                <td>Nintendo DS browser</td>
-                <td>Nintendo DS</td>
-                <td>8.5</td>
-                <td>C/A<sup>1</sup></td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>KHTML</td>
-                <td>Konqureror 3.1</td>
-                <td>KDE 3.1</td>
-                <td>3.1</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>KHTML</td>
-                <td>Konqureror 3.3</td>
-                <td>KDE 3.3</td>
-                <td>3.3</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>KHTML</td>
-                <td>Konqureror 3.5</td>
-                <td>KDE 3.5</td>
-                <td>3.5</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Tasman</td>
-                <td>Internet Explorer 4.5</td>
-                <td>Mac OS 8-9</td>
-                <td>-</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.1</td>
-                <td>Mac OS 7.6-9</td>
-                <td>1</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Tasman</td>
-                <td>Internet Explorer 5.2</td>
-                <td>Mac OS 8-X</td>
-                <td>1</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>NetFront 3.1</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>NetFront 3.4</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-                <td>A</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>Dillo 0.8</td>
-                <td>Embedded devices</td>
-                <td>-</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>Links</td>
-                <td>Text only</td>
-                <td>-</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>Lynx</td>
-                <td>Text only</td>
-                <td>-</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>IE Mobile</td>
-                <td>Windows Mobile 6</td>
-                <td>-</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Misc</td>
-                <td>PSP browser</td>
-                <td>PSP</td>
-                <td>-</td>
-                <td>C</td>
-              </tr>
-              <tr>
-                <td><input name='CBCheck' type='checkbox' /></td>
-                <td>Other browsers</td>
-                <td>All others</td>
-                <td>-</td>
-                <td>-</td>
-                <td>U</td>
+                <td>testServer006</td>
+                <td>运行中</td>
+                <td>2022/10/10</td>
+                <td>2022/10/11</td>
+                <td>4核数/16G</td>
+                <td>
+                  <div class="progress-group">
+                    <span class="progress-text">74%</span>
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 74%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td><img src="../../../Icon/download.png" class="img-rounded img-thumbnail" width="30" height="30"
+                    style="border: none;background-color:transparent"></td>
               </tr>
             </tbody>
           </table>
