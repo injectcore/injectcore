@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>操作日志</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- datepicker -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datepicker/datepicker3.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.css">
+  <!-- dataTables -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.css">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/flex.css">
+  <style>
+    .indexPage {}
+
+    .indexPage .statisticsBoard {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .indexPage .box {
+      overflow: hidden;
+      border-top: none;
+    }
+
+    .indexPage .box-header {
+      background-color: #e7e7e7;
+    }
+
+    .indexPage .statisticsBoard li {
+      list-style: none;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 30px 24px;
+      flex: 1 1 240px;
+      margin-left: 24px;
+      background-color: #fff;
+    }
+
+    .indexPage .statisticsBoard li:nth-of-type(1) {
+      margin-left: 0;
+    }
+
+    .indexPage .statisticsBoard li img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .indexPage .statisticsBoard .item .contents {
+      margin-left: 24px;
+    }
+
+    .indexPage .statisticsBoard .item .contents .tips {
+      margin: 0;
+      margin-bottom: 6px;
+      color: #c1c1c1;
+      font-size: 18px;
+    }
+
+    .indexPage .statisticsBoard .item .contents .value {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .indexPage .stepWrap {
+      list-style: none;
+      width: 100%;
+      padding-left: 10%;
+      padding-top: 10px;
+    }
+
+    .indexPage .box-title {
+      font-size: 16px;
+    }
+
+    .indexPage .stepItem {
+      list-style: none;
+      flex: 1;
+    }
+
+    .indexPage .stepItem .contents {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid green;
+    }
+
+    .indexPage .stepItem .contents p {
+      margin: 0;
+    }
+
+    .indexPage .stepItem div {
+      flex: 1;
+    }
+
+    .indexPage .stepItem .line {
+      border: 2px dashed #e4e4e4;
+      margin: 0 6px;
+    }
+
+    .indexPage .calculateList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .indexPage .calculateList .item {
+      padding: 8px 16px 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .indexPage .calculateList .item .itemContents {
+      margin-bottom: 8px;
+    }
+
+    .indexPage .calculateList .inner {
+      flex: 2;
+    }
+
+    .indexPage .calculateList .showBox {
+      flex: 1;
+    }
+
+    .indexPage .calculateList .showBox .text {
+      font-size: 18px;
+      color: #cd2323;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .indexPage .calculateList .showBox img {
+      width: 60px;
+      height: 60px;
+    }
+  </style>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS fixed TO GET A FIXED HEADER AND SIDEBAR LAYOUT -->
+<!-- the fixed layout is not compatible with sidebar-mini -->
+
+<body class="hold-transition skin-green fixed sidebar-mini">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="#" class="logo" style="font-size: 15px">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini">
+          <img src="../../../Icon/reach.png" class="img-thumbnail" width="35" height="30"
+            style="border: none;background-color:transparent">
+          <b>睿驰科技公有云计算服务平台</b>
+        </span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>睿驰科技公有云计算服务平台</b></span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less-->
+            <li class="dropdown messages-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-search"></i>
+              </a>
+            </li>
+            <!-- Notifications: style can be found in dropdown.less -->
+            <li class="dropdown notifications-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bell-o"></i>
+                <span class="label label-warning">10</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="header">You have 10 notifications</li>
+                <li>
+                  <!-- inner menu: contains the actual data -->
+                  <ul class="menu">
+                    <li>
+                      <a href="#">
+                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer"><a href="#">View all</a></li>
+              </ul>
+            </li>
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="../../../Icon/user.png" class="user-image" alt="">
+                <span class="hidden-xs">LiChunHui</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="../../../Icon/user.png" class="img-circle" alt="User Image">
+                  <p>
+                    LiChunHui
+                    <small>2022/10/11</small>
+                  </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">信息</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">登出</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li><a href="./node-list.html"><img src="../../../Icon/cloudcomputing.png" class="slideBar_icon"
+                alt="" /><span> 云计算</span></a></li>
+          <li><a href="./log-list.html"><img src="../../../Icon/log.png" class="slideBar_icon" alt="" /> <span>
+                操作日志</span></a></li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- 这里是标题部分 -->
+      <section class="content-header">
+        <!-- 标题 -->
+        <h1>
+          操作日志
+        </h1>
+        <a class="breadcrumb">
+          <i class="fa fa-refresh"></i>
+        </a>
+      </section>
+
+      <!-- 主要内容开始 -->
+      <section class="content indexPage">
+        <div class="statisticsBoardWrap">
+          <ul class="statisticsBoard fl-row-around">
+            <li class="item fl-row-leftStretch">
+              <img src="../../../Icon/remaintime.png">
+              <div class="fl-column-start contents">
+                <p class="tips">已计算实例</p>
+                <p class="value">20</p>
+              </div>
+            </li>
+            <li class="item fl-row-leftStretch">
+              <img src="../../../Icon/remaintime.png">
+              <div class="fl-column-start contents">
+                <p class="tips">FDS计算日志</p>
+                <p class="value">20</p>
+              </div>
+            </li>
+            <li class="item fl-row-leftStretch">
+              <img src="../../../Icon/remaintime.png">
+              <div class="fl-column-start contents">
+                <p class="tips">剩余时长</p>
+                <p class="value">20:00:22</p>
+              </div>
+            </li>
+            <li class="item fl-row-leftStretch">
+              <img src="../../../Icon/remaintime.png">
+              <div class="fl-column-start contents">
+                <p class="tips">剩余流量</p>
+                <p class="value">20GB</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">操作指引</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <ul class="stepWrap fl-row-left">
+              <li class="stepItem fl-row-left">
+                <div class="fl-row-left">
+                  <section class="contents fl-column-center">
+                    <p>第一步</p>
+                    <p>选择文件</p>
+                  </section>
+                  <div class="line"></div>
+                </div>
+              </li>
+              <li class="stepItem fl-row-left">
+                <div class="fl-row-left">
+                  <section class="contents fl-column-center">
+                    <p>第二步</p>
+                    <p>选择CPU和内存</p>
+                  </section>
+                  <div class="line"></div>
+                </div>
+              </li>
+              <li class="stepItem fl-row-left">
+                <div class="fl-row-left">
+                  <section class="contents fl-column-center">
+                    <p>第三步</p>
+                    <p>开始计算</p>
+                  </section>
+                  <div class="line"></div>
+                </div>
+              </li>
+              <li class="stepItem fl-row-left">
+                <div class="fl-row-left">
+                  <section class="contents fl-column-center">
+                    <p>第四步</p>
+                    <p>查看结果</p>
+                  </section>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">计算列表</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+            </div>
+            <!-- /.box-tools -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <ul class="calculateList">
+              <li class="item">
+                <div class="fl-row-justy itemContents">
+                  <section class="inner">
+                    <p>这里显示标题sdfsdfsf<span class="text-danger" style="color: rgba(242,62,67);">（运行中）</span></p>
+                    <p>safsdfsdfsdf</p>
+                  </section>
+                  <section class="showBox fl-row-justy">
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <img src="../../../Icon/download.png">
+                  </section>
+                </div>
+                <div class="progress sm">
+                  <div class="progress-bar progress-bar-aqua" style="width: 20%"></div>
+                </div>
+              </li>
+              <li class="item">
+                <div class="fl-row-justy itemContents">
+                  <section class="inner">
+                    <p>这里显示标题sdfsdfsf<span class="text-danger" style="color: green;">（已完成）</span></p>
+                    <p>safsdfsdfsdf</p>
+                  </section>
+                  <section class="showBox fl-row-justy">
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <img src="../../../Icon/download.png">
+                  </section>
+                </div>
+                <div class="progress sm">
+                  <div class="progress-bar progress-bar-aqua" style="width: 20%"></div>
+                </div>
+              </li>
+              <li class="item">
+                <div class="fl-row-justy itemContents">
+                  <section class="inner">
+                    <p>这里显示标题sdfsdfsf<span class="text-danger" style="color: green;">（已完成）</span></p>
+                    <p>safsdfsdfsdf</p>
+                  </section>
+                  <section class="showBox fl-row-justy">
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <img src="../../../Icon/download.png">
+                  </section>
+                </div>
+                <div class="progress sm">
+                  <div class="progress-bar progress-bar-aqua" style="width: 20%"></div>
+                </div>
+              </li>
+              <li class="item">
+                <div class="fl-row-justy itemContents">
+                  <section class="inner">
+                    <p>这里显示标题sdfsdfsf<span class="text-danger" style="color: green;">（已完成）</span></p>
+                    <p>safsdfsdfsdf</p>
+                  </section>
+                  <section class="showBox fl-row-justy">
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <div class="fl-column-left">
+                      <p class="text">44</p>
+                      <p class="">CPU</p>
+                    </div>
+                    <img src="../../../Icon/download.png">
+                  </section>
+                </div>
+                <div class="progress sm">
+                  <div class="progress-bar progress-bar-aqua" style="width: 20%"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </section>
+      <!-- 主要内容结束 -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 1.0.0
+      </div>
+      <strong>版权所有 &copy; <a href="http://www.reachsoft.com.cn/">北京环中睿驰科技有限公司</a>.</strong> All rights
+      reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane" id="control-sidebar-home-tab">
+          <h3 class="control-sidebar-heading">Recent Activity</h3>
+          <ul class="control-sidebar-menu">
+            <li>
+              <a href="javascript:void(0)">
+                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                  <p>Will be 23 on April 24th</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                  <p>New phone +1(800)555-1234</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                  <p>nora@example.com</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                  <p>Execution time 5 seconds</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <!-- /.control-sidebar-menu -->
+
+          <h3 class="control-sidebar-heading">Tasks Progress</h3>
+          <ul class="control-sidebar-menu">
+            <li>
+              <a href="javascript:void(0)">
+                <h4 class="control-sidebar-subheading">
+                  Custom Template Design
+                  <span class="label label-danger pull-right">70%</span>
+                </h4>
+
+                <div class="progress progress-xxs">
+                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <h4 class="control-sidebar-subheading">
+                  Update Resume
+                  <span class="label label-success pull-right">95%</span>
+                </h4>
+
+                <div class="progress progress-xxs">
+                  <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <h4 class="control-sidebar-subheading">
+                  Laravel Integration
+                  <span class="label label-warning pull-right">50%</span>
+                </h4>
+
+                <div class="progress progress-xxs">
+                  <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <h4 class="control-sidebar-subheading">
+                  Back End Framework
+                  <span class="label label-primary pull-right">68%</span>
+                </h4>
+
+                <div class="progress progress-xxs">
+                  <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <!-- /.control-sidebar-menu -->
+
+        </div>
+        <!-- /.tab-pane -->
+        <!-- Stats tab content -->
+        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+        <!-- /.tab-pane -->
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+          <form method="post">
+            <h3 class="control-sidebar-heading">General Settings</h3>
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Report panel usage
+                <input type="checkbox" class="pull-right" checked>
+              </label>
+
+              <p>
+                Some information about this general settings option
+              </p>
+            </div>
+            <!-- /.form-group -->
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Allow mail redirect
+                <input type="checkbox" class="pull-right" checked>
+              </label>
+
+              <p>
+                Other sets of options are available
+              </p>
+            </div>
+            <!-- /.form-group -->
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Expose author name in posts
+                <input type="checkbox" class="pull-right" checked>
+              </label>
+
+              <p>
+                Allow the user to show his name in blog posts
+              </p>
+            </div>
+            <!-- /.form-group -->
+
+            <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Show me as online
+                <input type="checkbox" class="pull-right" checked>
+              </label>
+            </div>
+            <!-- /.form-group -->
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Turn off notifications
+                <input type="checkbox" class="pull-right">
+              </label>
+            </div>
+            <!-- /.form-group -->
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Delete chat history
+                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+              </label>
+            </div>
+            <!-- /.form-group -->
+          </form>
+        </div>
+        <!-- /.tab-pane -->
+      </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery 2.2.3 -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/bootstrap/js/bootstrap.min.js"></script>
+  <!-- datepicker -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datepicker/bootstrap-datepicker.js"></script>
+  <!-- daterangepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- DataTables -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/plugins/fastclick/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/js/app.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../lib/BootstrapTemplate/AdminLTE-2.3.11/dist/js/demo.js"></script>
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": false,
+        "info": true,
+        "autoWidth": false
+      });
+      $(".addBtn").click(() => {
+        location.href = './node-detail.html'
+      })
+      // 文档 http://www.daterangepicker.com/
+      $('#daterangepicker').daterangepicker();
+      // $('#example2').DataTable({
+      //   "paging": true,
+      //   "lengthChange": false,
+      //   "searching": false,
+      //   "ordering": true,
+      //   "info": true,
+      //   "autoWidth": false
+      // });
+    });
+  </script>
+</body>
+
+</html>
