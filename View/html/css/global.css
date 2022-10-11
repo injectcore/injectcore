@@ -39,6 +39,7 @@
 .table-striped>tbody>tr:nth-of-type(even) {
   background-color: #f9f9f9;
 }
-.slideBar_icon{
+
+.slideBar_icon {
   width: 20px;
 }
